@@ -1,0 +1,902 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    /* Dark Background */
+    color: #ffffff;
+    /* White Text */
+}
+
+/* Header Styling */
+.header {
+    position: relative;
+    height: 100vh;
+    background: url('img/burger.jpg') no-repeat center center/cover;
+    /* Background Image */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none;
+    /* Hidden by default */
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.logo a {
+    font-size: 24px;
+    color: #ff9900;
+    /* Highlighted Color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+
+
+.nav-menu li a:hover {
+    color: #ff9900;
+    /* Highlighted on Hover */
+}
+
+.order-btn {
+    /* background-color: #ff9900; Highlighted Button */
+
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #00e658;
+    /* Darker on Hover */
+}
+
+/* * Responsive Styling */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Show Hamburger on smaller screens */
+    }
+
+    .nav-menu {
+        display: none;
+        /* Hide menu by default on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .nav-menu.show {
+        display: flex;
+        /* Show menu when toggled */
+        max-height: 300px;
+        /* Smooth transition effect */
+    }
+}
+
+/* Hero Section Styling */
+.hero {
+    text-align: center;
+    padding: 50px;
+    margin-top: auto;
+    height: 100vh;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+.cta-btn {
+    background-color: #ff9900;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #32b63d;
+}
+
+
+/* Special Offers Section Styling */
+.special-offers {
+    padding: 60px 20px;
+    background-color: #1b1b1b;
+    /* Dark background for section */
+    color: #ffffff;
+    text-align: center;
+}
+
+.offers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.offers-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ff9900;
+    /* Highlight color */
+}
+
+/* Grid Styling */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Offer Card Styling */
+.offer-card {
+    background-color: #222;
+    /* Darker card background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.offer-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.offer-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff9900;
+}
+
+.offer-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+/* Offer Button Styling */
+.offer-btn {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.offer-btn:hover {
+    background-color: #e68a00;
+}
+
+/* Testimonials Section Styling */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #1b1b1b;
+    /* Dark background for section */
+    color: #ffffff;
+    text-align: center;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #ff9900;
+    /* Highlight color */
+    letter-spacing: 2px;
+    /* Spacing between letters */
+    text-transform: uppercase;
+    /* Make the title uppercase */
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    background-color: #222;
+    /* Darker card background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    /* Lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    /* Deeper shadow on hover */
+}
+
+.customer-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #ff9900;
+    /* Highlight color border */
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .customer-photo {
+    transform: scale(1.1);
+    /* Slight zoom on hover */
+}
+
+.testimonial-quote {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.customer-name {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: #ff9900;
+    /* Highlight color */
+    text-transform: uppercase;
+}
+
+.customer-role {
+    font-size: 0.9em;
+    color: #888888;
+    /* Lighter gray for role */
+}
+
+/* Location and Delivery Section Styling */
+.location-delivery {
+    padding: 60px 20px;
+    background-color: #1b1b1b;
+    /* Dark background for section */
+    color: #ffffff;
+    text-align: center;
+}
+
+.location-delivery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-delivery-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #ff9900;
+    /* Highlight color */
+    letter-spacing: 2px;
+    /* Spacing between letters */
+    text-transform: uppercase;
+    /* Make the title uppercase */
+}
+
+/* Content Layout */
+.location-delivery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+/* Location Info Styling */
+.location-info,
+.delivery-info {
+    background-color: #222;
+    /* Darker background for info cards */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-info:hover,
+.delivery-info:hover {
+    transform: translateY(-8px);
+    /* Lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    /* Deeper shadow on hover */
+}
+
+.location-subtitle,
+.delivery-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ff9900;
+    /* Highlight color */
+    text-transform: uppercase;
+}
+
+.location-address,
+.location-hours,
+.location-phone,
+.delivery-text,
+.delivery-partners {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #cccccc;
+    /* Light gray for text */
+    line-height: 1.5;
+    /* Improve readability */
+}
+
+/* Map Styling */
+.location-map {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    /* Shadow for depth */
+}
+
+/* Gallery Section Styling */
+.gallery {
+    padding: 60px 20px;
+    background-color: #1b1b1b;
+    /* Dark background for section */
+    color: #ffffff;
+    text-align: center;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #ff9900;
+    /* Highlight color */
+    letter-spacing: 2px;
+    /* Spacing between letters */
+    text-transform: uppercase;
+    /* Make the title uppercase */
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    /* Lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    /* Deeper shadow on hover */
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* Smooth zoom effect */
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+    /* Zoom in on hover */
+}
+
+/* Social Proof Section Styling */
+.social-proof {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    /* Light background for section */
+    color: #333333;
+    /* Darker text color for contrast */
+    text-align: center;
+}
+
+.social-proof-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-proof-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #ff6600;
+    /* Accent color */
+    letter-spacing: 2px;
+    /* Spacing between letters */
+    text-transform: uppercase;
+    /* Make the title uppercase */
+}
+
+/* Social Proof Grid */
+.social-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Social Proof Item Styling */
+.social-proof-item {
+    background-color: #ffffff;
+    /* White background for proof items */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.social-proof-item:hover {
+    transform: translateY(-8px);
+    /* Lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    /* Slightly deeper shadow on hover */
+}
+
+.social-icon {
+    font-size: 2em;
+    margin-right: 15px;
+    color: #ff6600;
+    /* Accent color for icons */
+}
+
+.social-text {
+    font-size: 1em;
+    color: #555555;
+    /* Gray color for text */
+    line-height: 1.5;
+    /* Improve readability */
+}
+
+/* Ratings Section */
+.social-proof-ratings {
+    margin-top: 40px;
+}
+
+.ratings-title {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.rating-stars {
+    font-size: 2em;
+    color: #ffcc00;
+    /* Gold color for stars */
+}
+
+/* Newsletter Signup Section Styling */
+.newsletter {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    /* Light background for section */
+    color: #333333;
+    /* Darker text color for contrast */
+    text-align: center;
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6600;
+    /* Accent color */
+    letter-spacing: 1.5px;
+    /* Spacing between letters */
+    text-transform: uppercase;
+    /* Make the title uppercase */
+}
+
+.newsletter-description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555555;
+    /* Gray color for text */
+}
+
+/* Newsletter Form Styling */
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter-input {
+    width: 70%;
+    padding: 15px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-input:focus {
+    border-color: #ff6600;
+    /* Accent color on focus */
+}
+
+.newsletter-button {
+    padding: 15px 30px;
+    background-color: #ff6600;
+    /* Accent color */
+    color: #ffffff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+    background-color: #e55c00;
+    /* Darker shade on hover */
+}
+
+/* Footer Section Styling */
+.footer {
+    padding: 40px 20px;
+    background-color: #1b1b1b;
+    /* Dark background for footer */
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: start;
+    justify-items: center;
+}
+
+/* Footer Brand */
+.footer-brand {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    font-size: 1em;
+    color: #cccccc;
+    /* Light gray for description text */
+    line-height: 1.5;
+}
+
+/* Footer Links */
+.footer-links {
+    text-align: left;
+}
+
+.footer-links-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff9900;
+    /* Accent color */
+}
+
+.footer-link-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link-list li {
+    margin-bottom: 8px;
+}
+
+.footer-link-list a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link-list a:hover {
+    color: #ff9900;
+    /* Hover color */
+}
+
+/* Footer Social Media */
+.footer-social {
+    text-align: left;
+}
+
+.footer-social-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff9900;
+    /* Accent color */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff9900;
+    /* Hover color */
+}
+
+/* Footer Contact Info */
+.footer-contact {
+    text-align: left;
+}
+
+.footer-contact-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff9900;
+    /* Accent color */
+}
+
+.footer-contact-info {
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: #cccccc;
+    /* Light gray for contact text */
+}
+
+.footer-contact-info i {
+    margin-right: 8px;
+    color: #ff9900;
+    /* Icon color */
+}
+
+/* Sticky Order Button Styling */
+.sticky-order-button {
+    position: fixed;
+    /* Makes the button stay in place */
+    bottom: 20px;
+    /* Distance from the bottom of the viewport */
+    right: 20px;
+    /* Distance from the right of the viewport */
+    background-color: #ff6600;
+    /* Accent color */
+    color: #ffffff;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Light shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    /* Ensures the button stays on top of other elements */
+}
+
+.sticky-order-button:hover {
+    background-color: #e55c00;
+    /* Darker shade on hover */
+    transform: translateY(-3px);
+    /* Slight lift on hover */
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1001;
+    /* On top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #ffffff;
+    /* Light background for modal */
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Modal Button */
+.modal-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #ff6600;
+    /* Accent color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: #e55c00;
+    /* Darker shade on hover */
+}
+
+/* game sectin */
+/* .game{
+	position:relative;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: green;
+	height: 50px;
+	width: 100px;
+	padding: 15px 25px;
+	border: #121212;
+	font-size: 1.2rem;
+	list-style: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	padding: 15px 25px;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+} */
+.game {
+
+    position: relative;
+    /* Makes the button stay in place */
+    bottom: 20px;
+    /* Distance from the bottom of the viewport */
+    /* Distance from the right of the viewport */
+    background-color: #ff6600;
+    /* Accent color */
+    color: #ffffff;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    border: 8px solid green;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Light shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    /* Ensures the button stays on top of other elements */
+}
+
+.game a {
+    text-decoration: none;
+    color: wheat;
+
+}
+
+.game:hover {
+    background-color: #37b13d;
+    /* Darker shade on hover */
+    transform: translateY(-3px);
+}
